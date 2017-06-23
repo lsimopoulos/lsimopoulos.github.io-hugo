@@ -15,7 +15,7 @@ theme = "hugo-minimalist-theme"
 
 [params]
     site_author = "Leonidas Simopoulos"
-    site_description = "The odyssey of a greek geek programmer."
+    site_description = "As I set out for programming,I hope the voyage is a long one, full of adventure, full of discovery. "
     location = "Sweden"
     # Link custom assets relative to /static
     avatar = "img/profile-image.jpg"
