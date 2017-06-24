@@ -1,7 +1,7 @@
 +++
 date = "2017-06-24T13:20:43+02:00"
 categories = ["Android"]
-tags = ["Android","emulator","connection timeout error",]
+tags = ["Android","emulator","connection timeout error"]
 title = "Android: connection timeout error on emulator"
 +++
 
@@ -26,7 +26,7 @@ How did I solve the problem
 -----------------
 After googling around, I found in the official android [website](https://developer.android.com/studio/run/emulator-networking.html)  that : 
 
-{{< highlight >}}Each instance of the emulator runs behind a virtual router/firewall service that isolates it from your development machine network interfaces and settings and from the internet. An emulated device can't see your development machine or other emulator instances on the network. Instead, it sees only that it is connected through Ethernet to a router/firewall.{{< /highlight >}}
+"Each instance of the emulator runs behind a virtual router/firewall service that isolates it from your development machine network interfaces and settings and from the internet. An emulated device can't see your development machine or other emulator instances on the network. Instead, it sees only that it is connected through Ethernet to a router/firewall."
 
 Since I was using my local IP on the address, the emulator could not access it and got the connection timeout error. If I had used the external IP  and  the port was open I would not have gotten this error but it's not the best approach.
 Therefore whenever you want to access the server that is hosted on the same machine, just use ```10.0.2.2```.  
