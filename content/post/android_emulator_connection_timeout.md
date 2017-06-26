@@ -34,7 +34,11 @@ After googling around, I found in the official android [website](https://develop
 
 
 Since I was using my local IP on the address, the emulator could not access it and got the connection timeout error. If I had used the external IP  and  the port was open I would not have gotten this error but it's not the best approach.
-Therefore whenever you want to access the server that is hosted on the same machine, just use ```10.0.2.2```. 
+Therefore whenever you want to access the server that is hosted on the same machine, just use ```10.0.2.2```.  
+
+***Notes***
+
+Please be aware that this issue occurs with the default android emulator.If you are using Genymotion you wont enctounter it.
 
 
 ![Android](/images/android.png)
