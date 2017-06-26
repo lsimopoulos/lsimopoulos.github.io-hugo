@@ -23,7 +23,7 @@ How to host hugo pages on github pages using windows os:
 * 6. add a deploy.sh and copy the content from [Hugo website](https://gohugo.io/tutorials/github-pages-blog/). ***IMPORTANT***  change  hugo to ./hugo in order the script to work.
 * 7. add and commit all the related files to hugo and push them to username.github.io-hugo
 * 8. open cmd and use "icacls deploy.sh /reset" in order to remove any permission on this script. Or use [cmder] (http://cmder.net/) and execute the command : "chmod +x deploy.sh".
-* 9. deploy.sh "Your optional commit message" Note: you need to have bash installed. I am using git bash which was installed together with git. ***IMPORTANT*** you need to place the hugo.exe in the same folder as the deploy.sh.
+* 9. deploy.sh "Your optional commit message" Note: you need to have bash installed. I am using git bash which was installed together with git.
 
 
 ENDING NOTES
