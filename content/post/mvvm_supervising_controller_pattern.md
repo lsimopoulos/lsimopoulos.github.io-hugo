@@ -1,22 +1,22 @@
 +++
 date = "2017-06-26T20:11:26+02:00"
 categories = ["MVVM", "WPF","UWP"]
-tags = ["mvvm","wpf","UWP", "wpf","xamarin"]
+tags = ["mvvm","wpf","UWP"]
 title = "Supervising controller pattern and MVVM"
 +++
 
-I have been familiar with MVVM framework since the era of Silverlight. Since then I am always try to follow the approach clean code behind when it's achievable.
-One of the big benefits of mvvm is that ,except of the separation of concern, you can make unit tests covering all the logics in the ViewModels.  
+I have been familiar with MVVM framework since the era of Silverlight. I am always trying to follow the approach of "clean code behind" when it's achievable.
+One of the big benefits of MVVM is that ,except of the separation of concern, you can make unit tests covering all the logic in the ViewModels.  
 
 
-When using the mvvm pattern sometimes you encounter some challenges. Some functions need to be defined on the code behind which are tight coupled with GUI and include some logic. 
+When using the MVVM pattern sometimes you encounter some challenges. Some functions need to be defined on the code behind which are tight coupled with GUI and include some logic. 
 In these cases  you need to try to separate the logic from the code behind and move the it to the VM. 
 
 Martin Fowler introduced the design pattern called [Supervising Controller](https://martinfowler.com/eaaDev/SupervisingPresenter.html). 
 
 "Factor the UI into a view and controller where the view handles simple mapping to the underlying model and the the controller handles input response and complex view logic."
 
-I am going to present  how can you implement the Supervising Controller pattern on MVVM and tackle the aforementioned challenges.
+I am going to present  how you can implement the Supervising Controller pattern on the MVVM and tackle the aforementioned challenges.
 
 * First create an interface  ```IInterface.cs```
 
@@ -70,7 +70,7 @@ public void DoSomething()
 ***Conclusion***
 
 
-By applying this design pattern , the logic ,that is tightly coupled with the functionality on the code behind(Probably an event), can be targeted by unit test now and have the logic on the ViewModel. This can be handy at specific cases but of course this should not be applied for every case.
+By applying this design pattern , the logic ,that is tightly coupled with the functionality on the code behind(Probably an event),can be moved to the ViewModel and be targeted by the unit tests now. This pattern can be handy at specific cases but of course this should not be applied for every case.
  The disadvantage is that this implementation violates the "rule" : the View should not be aware of the ViewModel and vice versa. 
 
 
