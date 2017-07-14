@@ -3,6 +3,8 @@ date = "2017-06-14T17:35:12+02:00"
 categories = ["hugo"]
 tags = ["hugo","git hub pages","hosting"]
 title = "Host Hugo on github pages"
+author = "Leonidas Simopoulos"
+menu = ""
 +++
 
 This is my first post. I used hugo to make this blog. I totally recommend it. It's really quick to create a blog without the need to install anything extra(no plugins etc). 

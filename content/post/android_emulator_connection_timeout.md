@@ -3,6 +3,8 @@ date = "2017-06-24T13:20:43+02:00"
 categories = ["Android"]
 tags = ["Android","emulator","connection timeout error"]
 title = "Android: connection timeout error on emulator"
+menu = ""
+banner = "banners/android.jpg"
 +++
 
 Usually when I am developing mobile apps, I host the server on the cloud. But this time I decided to host it locally on the same machine where I'm developing the android app.
@@ -38,7 +40,5 @@ Therefore whenever you want to access the server that is hosted on the same mach
 
 Please be aware that this issue occurs with the default android emulator.If you are using Genymotion you wont enctounter it.
 
-
-![Android](/images/android.png)
 
 

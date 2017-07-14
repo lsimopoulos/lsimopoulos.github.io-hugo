@@ -3,9 +3,11 @@ date = "2017-07-03T20:11:26+02:00"
 categories = ["Xamarin", "WPF", "Autofac", "UWP", "MVVM Light"]
 tags = ["mvvm light","autofac","dependency injection", "wpf","xamarin","uwp"]
 title = "Integrate Autofac with MVVM Light"
+author = "Leonidas Simopoulos"
+menu = ""
 +++
 
-I am going to show how to integrate [Autofac](https://autofac.org/) with the [Mvvm Light](http://www.mvvmlight.net/) easy and quick for most simple scenarios. Autofac is very powerful IOC Container and MVVM Light is one of the best MVVM frameworks. 
+I am going to show how to integrate [Autofac](https://autofac.org/) with the [Mvvm Light](http://www.mvvmlight.net/) easy and quickly for most simple scenarios. Autofac is very powerful IOC Container and MVVM Light is one of the best MVVM frameworks. 
 
 1.Create a new project from mvvm light templates in the visual studio
 
