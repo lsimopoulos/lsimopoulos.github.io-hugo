@@ -66,7 +66,7 @@ theme = "hugo-icarus-theme"
 	[[params.menu]]
     before = false
     label  = "About"
-    link   = "/about/"
+    link   = "/about/about"
 	
 
 # Enter a link for the follow button on the left
