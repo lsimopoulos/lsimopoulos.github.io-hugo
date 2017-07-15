@@ -58,6 +58,21 @@ public class ApplicationUser : IdentityUser
 }
 ```
 
+**IMPORTANT NOTE**
+
+If the property  "instaceId" was a string , the [MaxLength(somenumber)] attribute would be needed to be applied. 
+
+For example:
+
+
+```
+	[MaxLength(50)]
+	[Index("IX_ServerInstance", 2, IsUnique = true)]
+    public string InstanceName { get; set; }
+```
+
+
+
 2.**Fluent Api**
 
 * In the ApplicationDbContext override the method OnModelCreating and add the following code:
