@@ -25,7 +25,7 @@ The message "Client not ready yet.." is not the most indicative.
 
 1. Restarted the pc.
 
-2. Deleted the emulator and created new image.
+2. Deleted the app from emulator.
 
 3. I did not add ``android:exported="true"`` on the MainActivity due to the fact that it had nested intent and it's exported by default. 
 
@@ -43,10 +43,16 @@ The message "Client not ready yet.." is not the most indicative.
 
 3. I enabled the Instant Run  but i got again the same error.
 
-4. I clicked on the "Clean Project" and it was working now even with the Instant Run enabled.
+4. Removed some comments from AndroidManifest.xml so I can trigger a full build.  [Instant Deploy](https://medium.com/google-developers/instant-run-how-does-it-work-294a1633367f) builds and deploy only the incremental changes.
+It doesn’t reinstall the app, neither restart the app nor restart the Activity.
+
+5. I clicked on the "Clean Project" and then on "Run app". It was working now even with the Instant Run enabled.
 
 **Notes**
 
 *I had the same error when I tried to deploy the app on my Samsung S8. 
 
 *Android Studio Version : 2.3.3
+
+## References
+ This [link](https://medium.com/google-developers/instant-run-how-does-it-work-294a1633367f) is really useful. I learned a lot about Instant Run.

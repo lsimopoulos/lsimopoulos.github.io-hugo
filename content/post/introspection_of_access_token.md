@@ -1,0 +1,149 @@
++++
+date = "2017-07-25T18:39:10+02:00"
+categories = ["Identity Server"]
+tags = ["Identity Server","Introspection of access token"]
+title = "Introspection of an access token"
+menu = ""
+banner = ""
++++
+
+[Identity Server 4](http://docs.identityserver.io/en/release/) is an OpenID Connect and OAuth 2.0 Framework.  On this post I am going to dive into the introspection of reference access token.
+
+
+>When using reference tokens - IdentityServer will store the contents of the token in a data store and will only issue a unique identifier for this token back to the client. 
+>The API receiving this reference must then open a back-channel communication to IdentityServer to validate the token. <cite> [Identity server 4 documentation](http://docs.identityserver.io/en/release/topics/reference_tokens.html)</cite>
+
+Identity server has an [introspection endpoint](http://docs.identityserver.io/en/release/endpoints/introspection.html?highlight=introspect) is used in order to validate a reference token.
+
+Identity Server provides  two middlewares:[OAuth2Introspection](https://github.com/IdentityModel/IdentityModel.AspNetCore.OAuth2Introspection)(used only for the validation of reference tokens)
+ and [AccessTokenValidation](https://github.com/IdentityServer/IdentityServer4.AccessTokenValidation) (used for validation both of  reference token and jwt). 
+
+
+## Requirements
+
+* Have Identity Server 4 set up 
+* Postman
+* .Net core 1.1
+
+## Postman
+
+1. Obtain the configuration from the discovery endpoint by using the following link  ```http://address:port/core/.well-known/openid-configuration```. The introspection endpoint is on my case: ``http://localhost:50774/connect/introspect``. ![openid discovery endpoint result](/images/introspect_discovery.JPG)
+
+2. Obtain an access token from the ``http://localhost:50774/connect/token`` (See the image bellow)![Valid Token](/images/introspect_access_token.JPG)
+
+3. Copy the value of the ``access_token``.
+
+4.
+
+*    Open a new tab , switch to POST and paste the introspection endpoint adress. 
+*    Click on the Body, select x-www-form-urlencoded or form-data. Add a new key with name ``token`` and its value field paste the copied access token from the previous step.
+
+![body of introspection request](/images/introspect_body.JPG)
+
+*  Click on the Headers. Add new key with name ``Authorization``. Regarding its value:
+
+On the authority server I have defined the api resource :
+
+```
+return new List<ApiResource>
+            {
+                new ApiResource
+                {
+                    Name = "api1",
+                    DisplayName = "My API",
+                    Scopes = new List<Scope>
+                    {
+                        new Scope
+                        {
+                            Name = "api1",
+                            DisplayName = "api1 scope",
+                            Emphasize = true,
+                            ShowInDiscoveryDocument = false,
+                            UserClaims = new List<string>
+                            {
+                                "name"
+                            }
+                        }
+                    },
+                    ApiSecrets = new List<Secret>
+                    {
+                        new Secret("secret".Sha256())
+                    }
+                }
+            };
+```
+
+Therefore the value should be : ``Basic YXBpMTpzZWNyZXQ=`` .
+The "YXBpMTpzZWNyZXQ=" is a [base64 string of the convertion of the string ``api1:secret``](https://github.com/lsimopoulos/IntrospectTokenCoreConsoleApp/blob/master/IntrospectTokenCoreConsoleApp/IntrospectTokenCoreConsoleApp/Program.cs#L342).
+
+![headers introspection](/images/introspect_headers.JPG)
+
+![body](/images/introspect_body.JPG)
+
+The response should look like this  in case it's valid:
+
+![valid access token](/images/introspect_valid_token_result.JPG)
+
+and if it's not valid:
+
+![invalid access token](/images/introspect_invalid_token.JPG)
+
+## .Net Core  Console app
+
+I created a [core console app](https://github.com/lsimopoulos/IntrospectTokenCoreConsoleApp). 
+I can get the same result from console app by providing the authority address, the scope name and the scope secret( [For more info](https://github.com/lsimopoulos/IntrospectTokenCoreConsoleApp/blob/master/README.md#usage) ).
+I have also implemented a command that validates a token wihtout connecting to the introspection endpoint. (This is work in progress and I have tested it only with tokens that were grant type of password). 
+
+```
+dotnet run validate serverAuthorityAddress scopeName scopePassword accessToken userId expiresIn clientId
+```
+I created this command to quick validate a token without the need to have a server running.For example I provided an access token that was created by another authority server(identity server as well) and I ran my tool. 
+
+Result:
+
+![Result of validation of a token was generated by another authority server](/images/console_invalid_example.JPG)
+
+
+
+## Manual Validation
+
+Claims: 
+
+```
+{
+    "nbf": 1500622663,
+    "exp": 1500623023,
+    "iss": "http://localhost:50774",
+    "aud": [
+        "http://localhost:50774/resources",
+        "api1"
+    ],
+    "client_id": "android",
+    "sub": "ec540763-2732-47c0-b73e-e228059ea2c8",
+    "auth_time": 1500622663,
+    "idp": "local",
+    "name": "leo",
+    "amr": "pwd",
+    "scope": "api1",
+    "active": true
+}
+```
+
+**iss** :  the expected value should be the address of the authority server(in my case ``http://localhost:50774``. If not, the access token is invalid.
+
+**nbf** and **exp** : check if the token is not expired and yet valid. Compare it with "auth_time" as well.
+
+**aud** : if it's targetting the correct audience and scope
+ 
+
+If I sent invalid token, the response would contain only the "active" property(like in the previous image).
+
+At this point I could check and validate more properties such as sub :if the uid matches with the user id, etc.
+
+## What about mobiles? 
+
+The following libraries can be used in order to communicate with  identity server or any openid and oauth authority server.
+[iOS](https://github.com/openid/AppAuth-iOS) and
+[Android](https://github.com/openid/AppAuth-Android) 
+
+On one of my following post I am going to write about how to validate access tokens in mobiles.
