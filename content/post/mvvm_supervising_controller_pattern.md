@@ -1,11 +1,10 @@
 +++
 date = "2017-06-26T20:11:26+02:00"
+archives = ["2017/06"]
 categories = ["MVVM", "WPF","UWP"]
 tags = ["mvvm","wpf","UWP"]
 title = "Supervising controller pattern and MVVM"
 author = "Leonidas Simopoulos"
-menu = ""
-banner = "banners/MVVM.jpg"
 +++
 
 I have been familiar with MVVM framework since the era of Silverlight. I am always trying to follow the approach of "clean code behind" when it's achievable.

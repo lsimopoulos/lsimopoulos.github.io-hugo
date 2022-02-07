@@ -1,10 +1,10 @@
 +++
 date = "2017-07-20T22:13:55+02:00"
+archives = ["2017/07"]
 categories = ["Android"]
 tags = ["Android","Client not ready yet error", "Android Studio"]
 title = "Android: Client not ready yet"
-menu = ""
-banner = "banners/android.jpg"
+image = "banners/android.jpg"
 +++
 
 I started developing an android app on my surface but then I decided  to move the code to my stationary pc. I copied the whole source on a USB stick and pasted it on the other pc. 

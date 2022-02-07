@@ -1,16 +1,16 @@
 +++
 date = "2017-06-14T17:35:12+02:00"
+archives = ["2017/06"]
 categories = ["hugo"]
 tags = ["hugo","git hub pages","hosting"]
 title = "Host Hugo on github pages"
 author = "Leonidas Simopoulos"
-menu = ""
 +++
 
 This is my first post. I used hugo to make this blog. I totally recommend it. It's really quick to create a blog without the need to install anything extra(no plugins etc). 
 
 
-It took me soIme time to figure out how to host the blog on github pages. I was struggling to deploy the hugo generated static website in github via /docs folder on master branch. It didn't work. Apparently it does not work having docs folder and hugo code on the same branch. The docs folder needs to be in a repo that it does not have name username.github.io.
+It took me some time to figure out how to host the blog on github pages. I was struggling to deploy the hugo generated static website in github via /docs folder on master branch. It didn't work. Apparently it does not work having docs folder and hugo code on the same branch. The docs folder needs to be in a repo that it does not have name username.github.io.
 Then I decided to separate the hugo code and generated output in two different repositories.  I decided to follow the approach of hosting Personal/Organization Pages from [Hugo website](https://gohugo.io/tutorials/github-pages-blog/).
 
 

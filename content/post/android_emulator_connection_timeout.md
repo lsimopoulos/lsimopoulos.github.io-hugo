@@ -3,8 +3,8 @@ date = "2017-06-24T13:20:43+02:00"
 categories = ["Android"]
 tags = ["Android","emulator","connection timeout error"]
 title = "Android: connection timeout error on emulator"
-menu = ""
-banner = "banners/android.jpg"
+archives= ["2017/06"]
+image = "banners/android.jpg"
 +++
 
 Usually when I am developing mobile apps, I host the server on the cloud. But this time I decided to host it locally on the same machine where I'm developing the android app.

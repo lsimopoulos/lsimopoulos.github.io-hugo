@@ -1,115 +1,115 @@
-baseurl = "https://lsimopoulos.github.io/"
-languageCode = "en-us"
+baseURL = "https://lsimopoulos.github.io/"
 title = "Leonidas Simopoulos's blog"
-subtitle = "As I set out for programming,I hope the voyage is a long one, full of adventure, full of discovery. "
-# Enable comments powered by Disqus by entering your disqus shortname
-disqusShortname = "lsimopoulos"
-# Enable gogle analytics by entering your tracking code
-googleAnalytics = "UA-61788978-2"
-# Define the number of posts per page
-paginate = 10
-footnotereturnlinkcontents = "↩"
-theme = "hugo-icarus-theme"
-# Comment the themesDir option if you use this theme in production
-#themesDir = "/themes/hugo-icarus-theme"
+author = "lsimopoulos"
+languageCode = "en"
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+theme = "Blonde"
+enableRobotsTXT = true
 
+# Please enable this feature if the site is available in Japanese, Chinese or Korean.
+#hasCJKLanguage = true
 
-[permalinks]
-    post = "/:year/:month/:day/:slug"
+# If you're using Google Analytics, you can enable this feature.
+#googleAnalytics = "UA-61788978-2"
 
+# Disqus Comment System
+#disqusShortname = "lsimopoulos"
 
 [params]
-    # Tell me who you are
-    author = "Leonidas Simopoulos"
-    bio = "Blogger - Programmer - Bear enthusiasist"
-    location = "Sweden"
-    site_description = "As I set out for programming,I hope the voyage is a long one, full of adventure, full of discovery."
-    copyright  = "Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice)."
-    avatar = "css/images/avatar.png"
-    # Enter your email address to display your Gravatar icon in the profile. If not set the theme
-    # will fallback to the avatar.
-    gravatar = "sim_leon@yahoo.com"
-    logo = "css/images/logo.png"
-    disable_mathjax = false # set to true to disable MathJax
+# Base color of the website.
+# https://tailwindcss.com/docs/background-color
+base_color = "bg-gray-800"
 
-    # define which types of pages should be shown. By default the type with the most regular pages
-    mainSections = ["post"]
+#Site description
+description = "As I set out for programming,I hope the voyage is a long one, full of adventure, full of discovery. "
 
-    # Format dates with Go's time formatting
-    date_format = "2006-01-02"
+# The number of articles to be displayed on a single page.
+paginator_pages = "10"
 
-    # Add custom assets with their paths relative to the static folder
-	custom_css = []
-	custom_js  = []
+# Enable this if you want the archive list to be in a drop-down format.
+archive_dropdown = "true"
 
-# Create custom menu entries by defining a label and a link for
-# them. Since you can also link posts, you've the option the
-# place the links before or after them.
-#
-# E.g.: "Home" appears before all linked posts in the menu
-# and "Tags" / "Categories" after them.
-[[params.menu]]
-    before = true
-    label  = "Home"
-    link   = "/"
+# Number of tags to be displayed.
+tagsLimit = 20
 
-[[params.menu]]
-    before = false
-    label  = "Tags"
-    link   = "tags/"
+# Dark mode by default : dark
+# Light mode by default : light
+darkmode = "dark"
 
-[[params.menu]]
-    before = false
-    label  = "Categories"
-    link   = "categories/"
-	
-	[[params.menu]]
-    before = false
-    label  = "About"
-    link   = "/about/about"
-	
+  [params.post]
+    # Show thumbnails
+    thumbnail = true
 
-# Enter a link for the follow button on the left
-[params.profile]
-    follow_button = "https://twitter.com/leonsim83"
+    # Disable the "NO IMAGE" image.
+    noimage = false
+
+    # See the Tailwind CSS documentation to set it up.
+    # Recommended settings are h-32 to h-48.
+    # https://tailwindcss.com/docs/height
+    thumbnail_height = "lg:h-44"
+
+    # https://tailwindcss.com/docs/width
+    thumbnail_width = "lg:w-auto"
+
+    # Number of characters in description
+    description = "130"
+
+  [params.widgets]
+    # Display widgets
+    display = true
+
+    # Order of widgets to display
+    widgets = ["search", "archive", "category", "tags", "recent"]
+
+# If you're using Yandex.Metrica, you can enable this feature.
+#[params.analytics.yandexmetrica]
+#    enabled = true
+#    tagNumber = ''
+
+[menu]
+
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about"
+    weight = 2
 
 
-[social]
-# Add your social network accounts to the profile section on the left
-# by entering your username. The links to your account will be
-# created automatically.
-    github          = "lsimopoulos"
-    gitlab          = ""
-    bitbucket       = ""
-    jsfiddle        = ""
-    codepen         = ""
-    foursquare      = ""
-    dribbble        = ""
-    deviantart      = ""
-    behance         = ""
-    flickr          = ""
-    instagram       = ""
-    youtube         = ""
-    vimeo           = ""
-    vine            = ""
-    medium          = ""
-    wordpress       = ""
-    tumblr          = ""
-    xing            = ""
-    linkedin        = ""
-    slideshare      = ""
-    stackoverflow   = ""
-    reddit          = ""
-    pinterest       = "sim_leon"
-    googleplus      = "https://plus.google.com/u/0/111373413352934032664"
-    facebook        = ""
-    facebook_admin  = ""
-    twitter_domain  = ""
-    twitter         = "leonsim83"
+[taxonomies]
+category = "categories"
+tag = "tags"
+archive = "archives"
 
-# Enable and disable widgets for the right sidebar
-[params.widgets]
-    recent_articles = true
-    categories = true
-    tags = true
-    tag_cloud = true
+[privacy]
+
+  [privacy.vimeo]
+    disabled = false
+    simple = true
+
+  [privacy.twitter]
+    disabled = false
+    enableDNT = true
+    simple = true
+
+  [privacy.instagram]
+    disabled = false
+    simple = true
+
+  [privacy.youtube]
+    disabled = false
+    privacyEnhanced = true
+
+[services]
+
+  [services.instagram]
+    disableInlineCSS = true
+
+  [services.twitter]
+    disableInlineCSS = true

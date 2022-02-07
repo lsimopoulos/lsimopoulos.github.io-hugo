@@ -1,11 +1,11 @@
 +++
 date = "2017-07-05T19:02:53+02:00"
+archives = ["2017/07"]
 categories = ["Entity Framework"]
 tags = ["entity framework"]
 title = "Configure an Index on many properties in entity framework 6.1"
 author = "Leonidas Simopoulos"
-menu = ""
-banner = "banners/entity-framework.png"
+image = "banners/entity-framework.png"
 +++
 
 There are few ways to configure an Index on more than one property in the entity framework 6.1. I created a new WebApplication project from Visual Studio and I selected MVC. 

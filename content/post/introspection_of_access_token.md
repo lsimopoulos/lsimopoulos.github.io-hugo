@@ -4,7 +4,6 @@ categories = ["Identity Server"]
 tags = ["Identity Server","Introspection of access token"]
 title = "Introspection of an access token"
 menu = ""
-banner = ""
 +++
 
 [Identity Server 4](http://docs.identityserver.io/en/release/) is an OpenID Connect and OAuth 2.0 Framework.  On this post I am going to dive into the introspection of reference access token.

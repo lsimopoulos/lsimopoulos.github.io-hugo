@@ -1,11 +1,11 @@
 +++
 date = "2017-07-16T19:47:48+02:00"
+archives = ["2017/07"]
 categories = ["Autofac"]
 tags = ["Autofac"]
 title = "Injecting classes that inherit from a generic one in Autofac"
 author = "Leonidas Simopoulos"
-menu = ""
-banner = "banners/autofac.jpg"
+image = "banners/autofac.jpg"
 +++
 
 Lets say we have a generic class defined like :

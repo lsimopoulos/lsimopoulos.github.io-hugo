@@ -2,3 +2,6 @@
 	path = public
 	url = https://github.com/lsimopoulos/lsimopoulos.github.io.git
 	branch = master
+[submodule "themes/Blonde"]
+	path = themes/Blonde
+	url = https://github.com/opera7133/Blonde.git
