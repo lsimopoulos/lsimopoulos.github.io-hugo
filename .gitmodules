@@ -2,6 +2,3 @@
 	path = public
 	url = https://github.com/lsimopoulos/lsimopoulos.github.io.git
 	branch = master
-[submodule "hugo-icarus-theme"]
-	path = hugo-icarus-theme
-	url = https://github.com/digitalcraftsman/hugo-icarus-theme
