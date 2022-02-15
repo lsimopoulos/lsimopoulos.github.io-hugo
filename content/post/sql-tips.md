@@ -6,12 +6,10 @@ categories = ["MSSQL"]
 description = "SQL tips"
 title = "SQL Tips"
 author = "Leonidas Simopoulos"
-image = "banners/sql.png"
+image = "banners/sql.jpg"
 +++
 
 
-# SQL Tips 
-<!--more-->
 * ##  Check if a column contains a string
 
 
