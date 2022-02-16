@@ -1,9 +1,11 @@
 +++
 date = "2017-07-25T18:39:10+02:00"
-categories = ["Identity Server"]
+categories = ["Access Token"]
 tags = ["Identity Server","Introspection of access token"]
 title = "Introspection of an access token"
-menu = ""
+description = "Introspection of an access token"
+author = "Leonidas Simopoulos"
+image = "banners/jwt_access.jpg"
 +++
 
 [Identity Server 4](http://docs.identityserver.io/en/release/) is an OpenID Connect and OAuth 2.0 Framework.  On this post I am going to dive into the introspection of reference access token.

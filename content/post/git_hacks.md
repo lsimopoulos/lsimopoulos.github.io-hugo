@@ -20,4 +20,9 @@ image = "banners/git.jpg"
 
 where x : the name of the submodule
 
+* ## delete pushed commit on the remote branch
 
+```
+git reset --hard <last_working_commit_id
+git push --force
+```

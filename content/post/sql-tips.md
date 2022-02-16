@@ -15,10 +15,9 @@ image = "banners/sql.jpg"
 
 
 ```
-SELECT [DatabaseId]
-      ,[Category]
-  FROM [dbo].[SomeTable]
-  Where Category LIKE '%theString%'
+SELECT [DatabaseId],[Category]
+FROM [dbo].[SomeTable]
+Where Category LIKE '%theString%'
 ```
 
 
@@ -34,4 +33,31 @@ VALUES
 	)
 	
 GO 10000000
+```
+
+* ## Select all rows where a column value  is not empty and not null
+
+```
+SELECT *
+FROM [dbo].[SomeTable]
+WHERE [TextColumnName]!='' AND [TextColumnName] IS NOT NULL
+```
+
+* ## Select all  records  where a column value occurs more than once
+
+```
+SELECT  SomeColumn, COUNT(*) 
+FROM [dbo].[SomeColumn]
+group by SomeColumn
+HAVING COUNT(*) > 1
+```
+
+* ## Delete all  records  where a column value occurs more than once
+
+```
+DELETE
+FROM  [dbo].[StockNews]
+WHERE Uuid IN (SELECT Uuid FROM  [dbo].[StockNews] 
+GROUP BY Uuid 
+HAVING COUNT(*) > 1)
 ```
