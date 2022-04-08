@@ -3,7 +3,6 @@ date = "2022-02-15T15:30:00+02:00"
 archives = ["2022/02"]
 tags = ["GIT"]
 categories = ["GIT"]
-description = "GIT hacks"
 title = "GIT hacks"
 author = "Leonidas Simopoulos"
 image = "banners/git.jpg"
