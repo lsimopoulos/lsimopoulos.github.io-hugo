@@ -25,3 +25,8 @@ where x : the name of the submodule
 git reset --hard <last_working_commit_id
 git push --force
 ```
+
+* ## revert a change of speicifc file that is commited ##
+```
+git checkout commitId -- src/path/somefile
+```
