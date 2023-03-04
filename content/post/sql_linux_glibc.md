@@ -1,6 +1,6 @@
 +++
 date = "2022-05-20T20:47:00+02:00"
-archives = ["2022/01"]
+archives = ["2022/05"]
 tags = ["MSSQL"]
 categories = ["MSSQL"]
 description = "SQL installation error on linux : GLIBC_2.27 not found"

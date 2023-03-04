@@ -10,7 +10,7 @@ image = "banners/xunit.png"
 +++
 
 
-* ##  Code
+* ##  Code  ##
 
 It is not recommended to test private methods, because they should be tested indirectly through the public method calling them or make them internal(InternalsVisibleTo).
 In case there is the need for doing so then here is an example :

@@ -10,13 +10,15 @@ image = "banners/polly.jpeg"
 +++
 
 
-* ##  Code  ## 
-```
+
+
 [Polly](http://www.thepollyproject.org/) is a .NET resilience and transient-fault-handling library that allows developers to express policies such as Retry, Circuit Breaker, Timeout, Bulkhead Isolation, and Fallback in a fluent and thread-safe manner.
-```
+
 
 ### Example ####
- In this example **IHttpClientFactory ** is used for:  
+ In this example 
+ 
+ **IHttpClientFactory** is used for:  
 1. configuration of HttpClients, 
 2. setting the Bearer token if available
 3. ignoring ssl validation errors for self signed certificates
