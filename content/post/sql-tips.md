@@ -52,12 +52,16 @@ group by SomeColumn
 HAVING COUNT(*) > 1
 ```
 
-* ## Delete all  records  where a column value occurs more than once
+* ## Get the value of a property  from JSON column
 
 ```
-DELETE
-FROM  [dbo].[StockNews]
-WHERE Uuid IN (SELECT Uuid FROM  [dbo].[StockNews] 
-GROUP BY Uuid 
-HAVING COUNT(*) > 1)
+SELECT  JSON_VALUE(JsonColumnName,'$.propertyInsideJSON') as propertyInsideJSON
+FROM  [dbo].[SomeTable]
+```
+
+* ## Update the value of a property  from JSON column
+
+```
+SELECT  JSON_MODIFY(JsonColumnName,'$.propertyInsideJSON') as propertyInsideJSON
+FROM [dbo].[SomeTable]
 ```
